@@ -5,7 +5,7 @@ const doc = {
     title: 'Home Projects',
     description: 'Home Improvement and Project Tracking'
   },
-  host: 'https://homeprojects.onrender.com',
+  host: 'homeprojects.onrender.com',
   schemes: ['https']
 };
 

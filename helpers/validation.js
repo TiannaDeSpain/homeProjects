@@ -1,5 +1,5 @@
 const { body, validationResult } = require('express-validator');
-const userValidationRules = () => {
+const homeImproveValidationRules = () => {
   return [
     body('item').isString(),
     body('estimatedCost').isCurrency({
@@ -12,7 +12,7 @@ const userValidationRules = () => {
     body('totalPriority').isInt({ min: 2, max: 10, allow_leading_zeroes: false }),
     body('store').isString(),
     body('room').isString(),
-    body('transport').isString()
+    body('transportation').isString()
   ];
 };
 
@@ -30,6 +30,6 @@ const validate = (req, res, next) => {
 };
 
 module.exports = {
-  userValidationRules,
+  homeImproveValidationRules,
   validate
 };

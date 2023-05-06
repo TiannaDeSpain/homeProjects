@@ -41,7 +41,40 @@ const createDIY = async (request, response) => {
 };
 
 const updateDIY = async (request, response) => {
+  // let accepted_fields = await mongodb
+  //   .getDb()
+  //   .db('homeProjects')
+  //   .collection('homeImprovement')
+  //   .findOne();
+  // accepted_fields = Object.keys(accepted_fields);
+  // try {
+  //   let keys = Object.keys(request.body);
+  //   if (keys.includes('_id')) {
+  //     return response.status(400).json('Malformed Payload. Review and try again').send();
+  //   }
+  //   keys.forEach((key) => {
+  //     if (!accepted_fields.includes(key)) {
+  //       return response.status(400).json('Malformed Payload. Review and try again').send();
+  //     }
+  //   });
+  // } catch (err) {
+  //   return response.status(500).json('Unexpected Server Error').send();
+  // }
   const DiyId = new ObjectId(request.params.id);
+  //Error Handling for invalid document id
+  try {
+    // eslint-disable-next-line no-unused-vars
+    let check = await mongodb
+      .getDb()
+      .db('homeProjects')
+      .collection('homeImprovement')
+      .find({ _id: DiyId });
+  } catch (err) {
+    return response
+      .status(404)
+      .json(err || 'The provided ID does not exist in the database')
+      .send();
+  }
   const DIY = {
     item: request.body.item,
     estimatedCost: request.body.estimatedCost,
@@ -52,27 +85,41 @@ const updateDIY = async (request, response) => {
     room: request.body.room,
     transportation: request.body.transportation
   };
-  const res = await mongodb
+  const resp = await mongodb
     .getDb()
     .db('homeProjects')
     .collection('homeImprovement')
     .replaceOne({ _id: DiyId }, DIY);
-  console.log(res);
-  if (res.modifiedCount > 0) {
-    response.status(204).send();
+  console.log(resp);
+  if (resp.modifiedCount > 0) {
+    return response.status(204).send();
   } else {
-    response.status(500).json(res.error || 'Error occurred while updating your DIY.');
+    return response
+      .status(500)
+      .json(resp.error || 'Error occurred while updating your DIY.')
+      .send();
   }
 };
 
 const deleteDIY = async (request, response) => {
+  //Error Handling for invalid document id
   try {
     const userId = new ObjectId(request.params.id);
+    try {
+      // eslint-disable-next-line no-unused-vars
+      let check = await mongodb
+        .getDb()
+        .db('homeProjects')
+        .collection('homeImprovement')
+        .find({ _id: userId });
+    } catch (err) {
+      response.status(404).json(err || 'The provided ID does not exist in the database');
+    }
     const res = await mongodb
       .getDb()
       .db('homeProjects')
       .collection('homeImprovement')
-      .remove({ _id: userId }, true);
+      .deleteOne({ _id: userId });
     console.log(res);
     if (res.deletedCount > 0) {
       response.status(200).send();

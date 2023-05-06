@@ -1,2 +1,4 @@
 node_modules
 .env
+homeProjects/package-lock.json
+package-lock.json

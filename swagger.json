@@ -7,12 +7,16 @@
   },
   "host": "homeprojects.onrender.com",
   "basePath": "/",
-  "schemes": ["https"],
+  "schemes": [
+    "https"
+  ],
   "paths": {
     "/homeImprove/": {
       "get": {
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -33,28 +37,28 @@
               "type": "object",
               "properties": {
                 "item": {
-                  "example": "Couch"
+                  "example": "any"
                 },
                 "estimatedCost": {
-                  "example": "$500.00"
+                  "example": "any"
                 },
                 "tiannaPriority": {
-                  "example": "5"
+                  "example": "any"
                 },
                 "toddPriority": {
-                  "example": "5"
+                  "example": "any"
                 },
                 "totalPriority": {
-                  "example": "10"
+                  "example": "any"
                 },
                 "store": {
-                  "example": "Amazon"
+                  "example": "any"
                 },
                 "room": {
-                  "example": "Office"
+                  "example": "any"
                 },
                 "transportation": {
-                  "example": "Truck"
+                  "example": "any"
                 }
               }
             }
@@ -70,10 +74,85 @@
         }
       }
     },
+    "/homeImprove/{id}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "item": {
+                  "example": "any"
+                },
+                "estimatedCost": {
+                  "example": "any"
+                },
+                "tiannaPriority": {
+                  "example": "any"
+                },
+                "toddPriority": {
+                  "example": "any"
+                },
+                "totalPriority": {
+                  "example": "any"
+                },
+                "store": {
+                  "example": "any"
+                },
+                "room": {
+                  "example": "any"
+                },
+                "transportation": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/paint/": {
       "get": {
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [],
         "responses": {
           "200": {

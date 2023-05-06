@@ -7,4 +7,8 @@ router.get('/', homeImproveController.getAll);
 
 router.post('/', homeImproveController.createDIY);
 
+router.put('/:id', homeImproveController.updateDIY);
+
+router.delete('/:id', homeImproveController.deleteDIY);
+
 module.exports = router;

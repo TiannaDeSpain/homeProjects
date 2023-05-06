@@ -21,6 +21,10 @@ Content-Type: application/json
     "transportation": "truck"
 }
 
+### Delete HomeImprove 
+
+DELETE http://localhost:8080/homeImprove/644ff8bbb5da983863f5be5e HTTP/1.1
+
 
 // PRODUCTION Deploy  
 ### Get all the paints

@@ -67,17 +67,17 @@ const updateDIY = async (request, response) => {
 
 const deleteDIY = async (request, response) => {
   try {
-    const DiyId = new ObjectId(request.params.id);
+    const userId = new ObjectId(request.params.id);
     const res = await mongodb
       .getDb()
       .db('homeProjects')
       .collection('homeImprovement')
-      .remove({ _id: DiyId }, true);
+      .remove({ _id: userId }, true);
     console.log(res);
     if (res.deletedCount > 0) {
       response.status(200).send();
     } else {
-      response.status(500).json(res.error || 'Error occurred while deleting your DIY.');
+      response.status(500).json(res.error || 'Error occurred while deleting your contact.');
     }
   } catch (err) {
     response.status(500).json(err);

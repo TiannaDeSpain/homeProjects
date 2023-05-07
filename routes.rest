@@ -6,8 +6,23 @@ GET http://localhost:8080/paint
 ### Get all the home improvement DIYs
 GET http://localhost:8080/homeImprove
 
-### Create Contact 
+### Create DIY 
 POST http://localhost:8080/homeImprove HTTP/1.1
+Content-Type: application/json
+
+{
+    "item": "table",
+    " estimatedCost ": " $150.00 ",
+    "tiannaPriority": 4,
+    "toddPriority": 2,
+    "totalPriority": 6,
+    "store": "Ikea",
+    "room": "Guest",
+    "transportation": "truck"
+}
+
+### Create DIY 
+PUT http://localhost:8080/homeImprove HTTP/1.1
 Content-Type: application/json
 
 {
@@ -32,6 +47,36 @@ GET https://homeprojects.onrender.com/paint
 
 ### Get all home improvement DIYs
 POST https://homeprojects.onrender.com/homeImprove HTTP/1.1
+Content-Type: application/json
+
+{
+    "item": "table",
+    " estimatedCost ": " $150.00 ",
+    "tiannaPriority": 4,
+    "toddPriority": 2,
+    "totalPriority": 6,
+    "store": "Ikea",
+    "room": "Guest",
+    "transportation": "truck"
+}
+
+### Create DIY 
+POST https://homeprojects.onrender.com/homeImprove HTTP/1.1
+Content-Type: application/json
+
+{
+    "item": "table",
+    " estimatedCost ": " $150.00 ",
+    "tiannaPriority": 4,
+    "toddPriority": 2,
+    "totalPriority": 6,
+    "store": "Ikea",
+    "room": "Guest",
+    "transportation": "truck"
+}
+
+### Create DIY 
+PUT https://homeprojects.onrender.com/homeImprove HTTP/1.1
 Content-Type: application/json
 
 {

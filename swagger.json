@@ -37,28 +37,28 @@
               "type": "object",
               "properties": {
                 "item": {
-                  "example": "any"
+                  "example": "Paint"
                 },
                 "estimatedCost": {
-                  "example": "any"
+                  "example": "$500.00"
                 },
                 "tiannaPriority": {
-                  "example": "any"
+                  "example": "3"
                 },
                 "toddPriority": {
-                  "example": "any"
+                  "example": "3"
                 },
                 "totalPriority": {
-                  "example": "any"
+                  "example": "6"
                 },
                 "store": {
-                  "example": "any"
+                  "example": "Amazon"
                 },
                 "room": {
-                  "example": "any"
+                  "example": "Bedroom"
                 },
                 "transportation": {
-                  "example": "any"
+                  "example": "Truck"
                 }
               }
             }

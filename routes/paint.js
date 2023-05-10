@@ -6,4 +6,6 @@ const { isAuthenticated } = require("../middleware/authenticate");
 
 router.get('/', paintController.getAll);
 
+router.post('/', isAuthenticated, paintController.newPaint);
+
 module.exports = router;

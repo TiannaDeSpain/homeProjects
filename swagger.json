@@ -5,12 +5,26 @@
     "description": "Home Improvement and Project Tracking",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "homeprojects.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
+    "/login": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/logout": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
     "/homeImprove/": {
       "get": {
         "description": "",
@@ -37,28 +51,28 @@
               "type": "object",
               "properties": {
                 "item": {
-                  "example": "Paint"
+                  "example": "any"
                 },
                 "estimatedCost": {
-                  "example": "$500.00"
+                  "example": "any"
                 },
                 "tiannaPriority": {
-                  "example": "3"
+                  "example": "any"
                 },
                 "toddPriority": {
-                  "example": "3"
+                  "example": "any"
                 },
                 "totalPriority": {
-                  "example": "6"
+                  "example": "any"
                 },
                 "store": {
-                  "example": "Amazon"
+                  "example": "any"
                 },
                 "room": {
-                  "example": "Bedroom"
+                  "example": "any"
                 },
                 "transportation": {
-                  "example": "Truck"
+                  "example": "any"
                 }
               }
             }
@@ -67,6 +81,9 @@
         "responses": {
           "201": {
             "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
           },
           "422": {
             "description": "Unprocessable Entity"
@@ -125,6 +142,9 @@
           "204": {
             "description": "No Content"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "404": {
             "description": "Not Found"
           },
@@ -150,6 +170,9 @@
           "200": {
             "description": "OK"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "404": {
             "description": "Not Found"
           },
@@ -169,6 +192,52 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "item": {
+                  "example": "any"
+                },
+                "color": {
+                  "example": "any"
+                },
+                "room": {
+                  "example": "any"
+                },
+                "brand": {
+                  "example": "any"
+                },
+                "sheen": {
+                  "example": "any"
+                },
+                "remaining": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
           },
           "500": {
             "description": "Internal Server Error"

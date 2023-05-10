@@ -23,7 +23,7 @@ app
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader(
       'Access-Control-Allow-Headers', 
-      'Orgin, X-Requested-With, Content-Type, Accept, Z-key, Autorization'
+      'Origin, X-Requested-With, Content-Type, Accept, Z-key, Authorization'
     );
     res.setHeader(
       'Access-Control-Allow-Methods', 

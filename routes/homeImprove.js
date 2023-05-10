@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {homeImproveValidationRules,validate} = require('../helpers/validation')
+const {homeImproveValidationRules,validate} = require('../middleware/validation')
 
 const homeImproveController = require('../controllers/homeImprove');
 

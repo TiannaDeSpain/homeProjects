@@ -16,6 +16,17 @@ const homeImproveValidationRules = () => {
   ];
 };
 
+const paintValidationRules = () => {
+  return [
+    body('color').isString(),
+    body('room').isString(),
+    body('brand').isString(),
+    body('sheen').isString(),
+    body('remaining').isString()
+  ];
+};
+
+
 const validate = (req, res, next) => {
   const errors = validationResult(req);
   if (errors.isEmpty()) {
@@ -31,5 +42,6 @@ const validate = (req, res, next) => {
 
 module.exports = {
   homeImproveValidationRules,
+  paintValidationRules,
   validate
 };

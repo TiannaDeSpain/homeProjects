@@ -2,7 +2,6 @@
 ### Get all the paints
 GET http://localhost:8080/paint
 
-
 ### Get all the home improvement DIYs
 GET http://localhost:8080/homeImprove
 

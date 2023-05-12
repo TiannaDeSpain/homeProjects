@@ -9,4 +9,9 @@ router.get('/', paintController.getAll);
 
 router.post('/', isAuthenticated, paintValidationRules(), validate, paintController.newPaint);
 
+router.put('/:id', isAuthenticated, paintValidationRules(), validate, paintController.updateDIY);
+
+router.delete('/:id', isAuthenticated, paintController.deleteDIY);
+
+
 module.exports = router;
